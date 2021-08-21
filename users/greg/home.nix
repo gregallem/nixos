@@ -26,6 +26,7 @@
     trezor-suite
     htop
     onedrive
+    ipscan
     git
    ];
 

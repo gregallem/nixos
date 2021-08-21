@@ -93,9 +93,8 @@
      wget
      firefox
      gparted
-     trezor-suite
-     trezorctl
      appimage-run
+     jdk
      neofetch
      (appimage-run.override {
       extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
