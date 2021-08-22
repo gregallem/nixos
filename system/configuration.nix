@@ -21,7 +21,7 @@
  
   # Trezor setup
    services.trezord.enable = true;
-  
+
   
  # Flatpak setup
    services.flatpak.enable = true;
@@ -62,7 +62,7 @@
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.desktopManager.gnome.enable = true;
   # services.gnome.games.enable = true;
-  # services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.pantheon.enable = true;
 
   # Configure keymap in X11
@@ -93,13 +93,13 @@
      wget
      firefox
      gparted
+     trezor-udev-rules
      appimage-run
      neofetch
        (appimage-run.override {
       extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
     })
-    gnupg pinentry (python3.withPackages(ps: with ps; [ trezor_agent wheel]))
-  
+    
 ];
 
   # Some programs need SUID wrappers, can be configured further or are
