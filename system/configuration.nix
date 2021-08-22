@@ -14,7 +14,7 @@
 
   # Virtual machine setup
    nixpkgs.config.allowUnfree = true;
-   boot.kernelPackages =  pkgs.linuxPackages_5_13;
+   boot.kernelPackages =  pkgs.linuxPackages_5_10;
    virtualisation.virtualbox.host.enable = true;
    virtualisation.virtualbox.host.enableExtensionPack = true;
    users.extraGroups.vboxusers.members = [ "greg" ];
@@ -94,9 +94,8 @@
      firefox
      gparted
      appimage-run
-     jdk
      neofetch
-     (appimage-run.override {
+       (appimage-run.override {
       extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
     })
     gnupg pinentry (python3.withPackages(ps: with ps; [ trezor_agent wheel]))
