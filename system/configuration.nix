@@ -14,7 +14,7 @@
 
   # Virtual machine setup
    nixpkgs.config.allowUnfree = true;
-   boot.kernelPackages =  pkgs.linuxPackages_5_10;
+   boot.kernelPackages =  pkgs.linuxPackages_5_13;
    virtualisation.virtualbox.host.enable = true;
    virtualisation.virtualbox.host.enableExtensionPack = true;
    users.extraGroups.vboxusers.members = [ "greg" ];
