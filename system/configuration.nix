@@ -21,7 +21,6 @@
  
   # Trezor setup
    services.trezord.enable = true;
-
   
  # Flatpak setup
    services.flatpak.enable = true;
