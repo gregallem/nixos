@@ -28,6 +28,7 @@
     onedrive
     nmap-graphical
     git
+    zoom-us
    ];
 
 }

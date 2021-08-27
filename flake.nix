@@ -16,7 +16,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.mudrii = import ./users/greg/home.nix;
+            home-manager.users.nixos = import ./users/greg/home.nix;
           }
         ];
       };

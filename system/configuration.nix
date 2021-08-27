@@ -101,7 +101,7 @@
      trezor-udev-rules
      appimage-run
      neofetch
-       (appimage-run.override {
+            (appimage-run.override {
       extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
     })
     
