@@ -23,7 +23,6 @@
 
   home.packages = with pkgs;[
     nomachine-client
-    trezor-suite
     htop
     onedrive
     nmap-graphical

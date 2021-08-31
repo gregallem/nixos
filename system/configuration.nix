@@ -98,12 +98,10 @@
      wget
      firefox
      gparted
-     trezor-udev-rules
      appimage-run
      neofetch
-            (appimage-run.override {
-      extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
-    })
+     
+    
     
 ];
 
