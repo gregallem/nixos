@@ -7,9 +7,8 @@
 
   };  outputs = { home-manager, nixpkgs, ... }: {
     nixosConfigurations.nixos = {
-      nixtst = nixpkgs.lib.nixosSystem {
+      hostname = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-       config = { allowUnfree = true; };
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager

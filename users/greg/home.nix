@@ -18,7 +18,16 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "21.05";
-  
+
+  programs.vim = {
+    enable = true;
+    plugins = with pkgs.vimPlugins; [ vim-airline ];
+    settings = { ignorecase = true; };
+    extraConfig = ''
+      set mouse=a
+    '';
+  }; 
+
    nixpkgs.config.allowUnfree= true;
 
   home.packages = with pkgs;[
@@ -28,6 +37,7 @@
     nmap-graphical
     git
     zoom-us
+    
    ];
 
 }
