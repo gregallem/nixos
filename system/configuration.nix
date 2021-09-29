@@ -16,6 +16,10 @@
      experimental-features = nix-command flakes
   '';
 
+  #zsh shell
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
+
    boot.supportedFilesystems = [ "ntfs" ];
 
   # Virtual machine setup
@@ -100,7 +104,7 @@
      gparted
      appimage-run
      neofetch
-     
+      
     
     
 ];
