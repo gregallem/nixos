@@ -16,7 +16,7 @@
      experimental-features = nix-command flakes
   '';
 
-  #zsh shell
+  #fish shell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
@@ -104,6 +104,13 @@
      gparted
      appimage-run
      neofetch
+     nomachine-client
+     htop
+     onedrive
+     nmap-graphical
+     git
+     zoom-us
+
       
     
     
