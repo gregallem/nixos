@@ -28,7 +28,22 @@
    virtualisation.virtualbox.host.enable = true;
    virtualisation.virtualbox.host.enableExtensionPack = true;
    users.extraGroups.vboxusers.members = [ "greg" ];
- 
+ #sway setup
+  programs.sway = {
+  enable = true;
+  wrapperFeatures.gtk = true; # so that gtk works properly
+  extraPackages = with pkgs; [
+    swaylock
+    swayidle
+    wl-clipboard
+    mako # notification daemon
+    alacritty # Alacritty is the default terminal in the config
+    wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
+    waybar
+   
+  ];
+};
+
   # Trezor setup
     services.trezord.enable = true;
   
@@ -68,8 +83,8 @@
 
 
   # Enable the GNOME Desktop Environment.
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
+   services.xserver.displayManager.gdm.enable = true;
+   services.xserver.desktopManager.gnome.enable = true;
   # services.gnome.games.enable = true;
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.pantheon.enable = true;
@@ -110,7 +125,7 @@
      nmap-graphical
      git
      zoom-us
-
+    
       
     
     
