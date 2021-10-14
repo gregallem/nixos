@@ -28,6 +28,7 @@
    virtualisation.virtualbox.host.enable = true;
    virtualisation.virtualbox.host.enableExtensionPack = true;
    users.extraGroups.vboxusers.members = [ "greg" ];
+
  #sway setup
   programs.sway = {
   enable = true;
@@ -40,7 +41,7 @@
     alacritty # Alacritty is the default terminal in the config
     wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
     waybar
-   
+    pcmanfm   
   ];
 };
 
