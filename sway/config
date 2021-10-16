@@ -199,11 +199,11 @@ bindsym $mod+r mode "resize"
 
 #
 # Status Bar:
-#     
+exec_always --no-startup-id autotiling     
 # Read `man 5 sway-bar` for more information about this section.
 bar {
                position top
-             swaybar_command waybar
+            # swaybar_command waybar
               
 
     # When the status_command prints a new line to stdout, swaybar updates.

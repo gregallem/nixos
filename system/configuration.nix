@@ -20,8 +20,10 @@
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
+  # samba support
    boot.supportedFilesystems = [ "ntfs" ];
-
+   services.gvfs.enable = true; # so that samba works
+ 
   # Virtual machine setup
    nixpkgs.config.allowUnfree = true;
    boot.kernelPackages =  pkgs.linuxPackages_latest;
@@ -37,11 +39,14 @@
     swaylock
     swayidle
     wl-clipboard
+    clipman
     mako # notification daemon
     alacritty # Alacritty is the default terminal in the config
     wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
     waybar
-    pcmanfm   
+    pcmanfm
+    nwg-launchers
+    autotiling    
   ];
 };
 
@@ -126,7 +131,7 @@
      nmap-graphical
      git
      zoom-us
-    
+     lxqt.lxqt-policykit # For samba to work    
       
     
     
