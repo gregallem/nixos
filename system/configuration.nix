@@ -13,7 +13,7 @@
    # Make ready for nix flakes
    nix.package = pkgs.nixFlakes;
    nix.extraOptions = ''
-     experimental-features = nix-command flakes
+   experimental-features = nix-command flakes
   '';
 
   #fish shell
@@ -42,8 +42,8 @@
     clipman
     mako # notification daemon
     alacritty # Alacritty is the default terminal in the config
-    wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
-    waybar
+  # wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
+  #  waybar
     pcmanfm
     nwg-launchers
     autotiling    
@@ -93,7 +93,7 @@
    services.xserver.desktopManager.gnome.enable = true;
   # services.gnome.games.enable = true;
   # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.pantheon.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
    services.xserver.layout = "us";
@@ -101,7 +101,7 @@
 
   # Enable CUPS to print documents.
    services.printing.enable = true;
-  services.printing.drivers = [ pkgs.brlaser ];
+   services.printing.drivers = [ pkgs.brlaser ];
 
   # Enable sound.
    sound.enable = true;
@@ -122,7 +122,6 @@
   # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      firefox
-     gparted
      appimage-run
      neofetch
      nomachine-client
@@ -132,8 +131,7 @@
      git
      zoom-us
      lxqt.lxqt-policykit # For samba to work    
-      
-    
+         
     
 ];
 
