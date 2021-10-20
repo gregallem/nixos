@@ -42,20 +42,25 @@
     clipman
     mako # notification daemon
     alacritty # Alacritty is the default terminal in the config
-  # wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
-  #  waybar
+    wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
     pcmanfm
-    nwg-launchers
     autotiling    
+    swaybg
+    nwg-launchers
+    i3status
   ];
 };
 
-  # Trezor setup
-    services.trezord.enable = true;
+# Enable i3 WM
+
+ # Trezor setup
+   services.trezord.enable = true;
   
  # Flatpak setup
    services.flatpak.enable = true;
    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
 
   # Use the systemd-boot EFI boot loader.
    boot.loader.systemd-boot.enable = true;
@@ -122,18 +127,18 @@
   # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      firefox
-     appimage-run
      neofetch
-     nomachine-client
      htop
      onedrive
      nmap-graphical
      git
      zoom-us
      lxqt.lxqt-policykit # For samba to work    
-         
-    
-];
+     libreoffice   
+     appimage-run
+     nomachine-client
+     
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -160,7 +165,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.05"; # Did you read the comment?
+  # system.stateVersion = "21.05"; # Did you read the comment?
 
  
 
