@@ -47,15 +47,18 @@
     autotiling    
     swaybg
     nwg-launchers
-    i3status
+    waybar
+    dmenu
+    xlockmore  
   ];
 };
 
-# Enable i3 WM
+ # Enable spectr WM
+  services.xserver.windowManager.spectrwm.enable = true;
 
  # Trezor setup
    services.trezord.enable = true;
-  
+      
  # Flatpak setup
    services.flatpak.enable = true;
    xdg.portal.enable = true;
@@ -134,7 +137,7 @@
      git
      zoom-us
      lxqt.lxqt-policykit # For samba to work    
-     libreoffice   
+     freeoffice   
      appimage-run
      nomachine-client
      

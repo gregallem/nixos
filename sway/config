@@ -14,13 +14,13 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term gnome-terminal  
+  set $term gnome-terminal  
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #  set $menu dmenu_path | dmenu | xargs swaymsg exec --
-  set $menu wofi --show=drun --lines=7 --prompt=""
- 
+#  set $menu wofi --show=drun --lines=7 --prompt=""
+   set $menu nwggrid -p
 ### Output configuration
 #
 # Default wallpaper
@@ -83,8 +83,8 @@ set $term gnome-terminal
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-   
+    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+   bindsym $mod+shift+e exec nwgbar
 #
 # Moving around:
 #
@@ -204,7 +204,8 @@ exec_always --no-startup-id autotiling
 # Read `man 5 sway-bar` for more information about this section.
 bar {
                position top
-        
+             
+       swaybar_command waybar
               
 
     # When the status_command prints a new line to stdout, swaybar updates.
@@ -212,11 +213,12 @@ bar {
     status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
 
     colors {
-        statusline #ffffff
+       statusline #ffffff
         background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+       inactive_workspace #32323200 #32323200 #5c5c5c
+   }    
 }
+
 default_border none
 
 include /etc/sway/config.d/*
