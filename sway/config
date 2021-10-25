@@ -19,12 +19,12 @@ set $right l
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #  set $menu dmenu_path | dmenu | xargs swaymsg exec --
-#  set $menu wofi --show=drun --lines=7 --prompt=""
-   set $menu nwggrid -p
+  set $menu wofi --show=drun --lines=7 --prompt=""
+# set $menu nwggrid -p
 ### Output configuration
 #
 # Default wallpaper
-# output * bg ~/.config/sway/backgrounds/Sway_Wallpaper_Blue_1920x1080.png fill
+ output * bg ~/.config/sway/backgrounds/IceCrystals.jpg fill
 #
 # Example configuration:
 #
@@ -83,8 +83,8 @@ set $right l
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-   bindsym $mod+shift+e exec nwgbar
+     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    # bindsym $mod+shift+e exec nwgbar
 #
 # Moving around:
 #

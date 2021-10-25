@@ -46,15 +46,14 @@
     pcmanfm
     autotiling    
     swaybg
-    nwg-launchers
     waybar
-    dmenu
-    xlockmore  
+   # dmenu #for spectrwm
+   # xlockmore #for spectrwm 
   ];
 };
 
- # Enable spectr WM
-  services.xserver.windowManager.spectrwm.enable = true;
+ # Enable spectrwm
+ #  services.xserver.windowManager.spectrwm.enable = true;
 
  # Trezor setup
    services.trezord.enable = true;
@@ -62,7 +61,7 @@
  # Flatpak setup
    services.flatpak.enable = true;
    xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
 
   # Use the systemd-boot EFI boot loader.
@@ -97,10 +96,10 @@
 
 
   # Enable the GNOME Desktop Environment.
-   services.xserver.displayManager.gdm.enable = true;
-   services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+    services.xserver.desktopManager.gnome.enable = true;
   # services.gnome.games.enable = true;
-  # services.xserver.displayManager.sddm.enable = true;
+   services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
