@@ -24,9 +24,11 @@
    boot.supportedFilesystems = [ "ntfs" ];
    services.gvfs.enable = true; # so that samba works
  
-  # Virtual machine setup
+  # Kernal and non free support
    nixpkgs.config.allowUnfree = true;
    boot.kernelPackages =  pkgs.linuxPackages_latest;
+
+  # Virtual machine setup
    virtualisation.virtualbox.host.enable = true;
    virtualisation.virtualbox.host.enableExtensionPack = true;
    users.extraGroups.vboxusers.members = [ "greg" ];
@@ -41,19 +43,18 @@
     wl-clipboard
     clipman
     mako # notification daemon
-    alacritty # Alacritty is the default terminal in the config
+  # alacritty # Alacritty is the default terminal in the config
     wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
     pcmanfm
     autotiling    
     swaybg
     waybar
-   # dmenu #for spectrwm
-   # xlockmore #for spectrwm 
+       
   ];
 };
+# Spectrwm Window Manager
 
- # Enable spectrwm
- #  services.xserver.windowManager.spectrwm.enable = true;
+# services.xserver.windowManager.spectrwm.enable = true;
 
  # Trezor setup
    services.trezord.enable = true;
@@ -139,6 +140,7 @@
      freeoffice   
      appimage-run
      nomachine-client
+     garmin-plugin
      
   ];
 

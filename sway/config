@@ -14,17 +14,17 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-  set $term gnome-terminal  
+set $term gnome-terminal  
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #  set $menu dmenu_path | dmenu | xargs swaymsg exec --
-  set $menu wofi --show=drun --lines=7 --prompt=""
+set $menu wofi --show=drun --lines=7 --prompt="" --allow-images 
 # set $menu nwggrid -p
 ### Output configuration
 #
 # Default wallpaper
- output * bg ~/.config/sway/backgrounds/IceCrystals.jpg fill
+ output * bg ~/.config/sway/backgrounds/Leaf.jpg fill
 #
 # Example configuration:
 #
