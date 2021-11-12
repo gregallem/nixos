@@ -18,9 +18,9 @@ set $term gnome-terminal
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#  set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi --show=drun --lines=7 --prompt="" --allow-images 
-# set $menu nwggrid -p
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+  set $menu wofi --show=drun --lines=7 --prompt="" --allow-images
+ 
 ### Output configuration
 #
 # Default wallpaper
@@ -39,8 +39,8 @@ set $menu wofi --show=drun --lines=7 --prompt="" --allow-images
  exec swayidle -w \
           timeout 300 'swaylock -f -c 000000' \
           timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -c 000000'
-
+          before-sleep 'swaylock -f -c 000000' \
+                         
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -83,8 +83,8 @@ set $menu wofi --show=drun --lines=7 --prompt="" --allow-images
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-    # bindsym $mod+shift+e exec nwgbar
+    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+      bindsym $mod+shift+e exec wlogout
 #
 # Moving around:
 #
@@ -198,19 +198,19 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#
-# Status Bar:
-exec_always --no-startup-id autotiling     
+# Allow tiling of windows
+exec autotiling
+# Status Bar: 
 # Read `man 5 sway-bar` for more information about this section.
 bar {
                position top
              
-       swaybar_command waybar
+      swaybar_command waybar
               
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    status_command while date +'%d-%m-%Y %l:%M:%S %p'; do sleep 1; done
 
     colors {
        statusline #ffffff

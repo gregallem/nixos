@@ -29,10 +29,15 @@
    boot.kernelPackages =  pkgs.linuxPackages_latest;
 
   # Virtual machine setup
-   virtualisation.virtualbox.host.enable = true;
-   virtualisation.virtualbox.host.enableExtensionPack = true;
-   users.extraGroups.vboxusers.members = [ "greg" ];
-
+  # virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
+  # users.extraGroups.vboxusers.members = [ "greg" ];
+ 
+ #Virt-Manager setup
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
+  users.extraGroups.libvirtd.members = [ "greg"];
+ 
  #sway setup
   programs.sway = {
   enable = true;
@@ -49,7 +54,7 @@
     autotiling    
     swaybg
     waybar
-       
+    wlogout    
   ];
 };
 # Spectrwm Window Manager
@@ -104,8 +109,8 @@
   # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
-   services.xserver.layout = "us";
-   services.xserver.xkbOptions = "eurosign:e";
+  # services.xserver.layout = "us";
+  # services.xserver.xkbOptions = "eurosign:e";
 
   # Enable CUPS to print documents.
    services.printing.enable = true;
@@ -137,11 +142,13 @@
      git
      zoom-us
      lxqt.lxqt-policykit # For samba to work    
-     freeoffice   
+     libreoffice   
      appimage-run
      nomachine-client
      garmin-plugin
-     
+     qemu
+     virt-manager
+         
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
