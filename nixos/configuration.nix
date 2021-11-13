@@ -148,7 +148,7 @@
      appimage-run
      nomachine-client
      garmin-plugin
-     qemu
+     qemu_kvm
      virt-manager
          
   ];
