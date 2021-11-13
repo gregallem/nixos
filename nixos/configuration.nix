@@ -54,7 +54,9 @@
     autotiling    
     swaybg
     waybar
-    wlogout    
+    wlogout  
+    
+      
   ];
 };
 # Spectrwm Window Manager
