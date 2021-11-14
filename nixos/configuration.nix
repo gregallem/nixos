@@ -150,7 +150,7 @@
      garmin-plugin
      qemu_kvm
      virt-manager
-         
+           
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
