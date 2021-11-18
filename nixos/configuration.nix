@@ -54,25 +54,19 @@
     autotiling    
     swaybg
     waybar
-    wlogout  
+    wlogout    
     
-      
+  
   ];
 };
-# Spectrwm Window Manager
-
-# services.xserver.windowManager.spectrwm.enable = true;
 
  # Trezor setup
    services.trezord.enable = true;
       
  # Flatpak setup
    services.flatpak.enable = true;
-   xdg.portal.enable = true;
-   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-
-  # Use the systemd-boot EFI boot loader.
+ # Use the systemd-boot EFI boot loader.
    boot.loader.systemd-boot.enable = true;
    boot.loader.efi.canTouchEfiVariables = true;
 
@@ -149,6 +143,7 @@
      nomachine-client
      garmin-plugin
      qemu_kvm
+     qemu    
      virt-manager
            
   ];
