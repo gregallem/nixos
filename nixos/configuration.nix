@@ -16,6 +16,9 @@
    experimental-features = nix-command flakes
   '';
 
+  # Optimisation Nix store
+    nix.autoOptimiseStore = true;
+
   #fish shell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
@@ -48,15 +51,14 @@
     wl-clipboard
     clipman
     mako # notification daemon
-  # alacritty # Alacritty is the default terminal in the config
+   # alacritty # Alacritty is the default terminal in the config
     wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
     pcmanfm
     autotiling    
     swaybg
     waybar
     wlogout    
-    
-  
+     
   ];
 };
 
@@ -65,7 +67,8 @@
       
  # Flatpak setup
    services.flatpak.enable = true;
-
+   xdg.portal.enable = true;
+  
  # Use the systemd-boot EFI boot loader.
    boot.loader.systemd-boot.enable = true;
    boot.loader.efi.canTouchEfiVariables = true;
@@ -142,10 +145,12 @@
      appimage-run
      nomachine-client
      garmin-plugin
-     qemu_kvm
-     qemu    
+     qemu
      virt-manager
-           
+     qbittorrent
+     micro
+          
+                   
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -173,7 +178,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  # system.stateVersion = "21.05"; # Did you read the comment?
+  # system.stateVersion = "unstable"; # Did you read the comment?
 
  
 
