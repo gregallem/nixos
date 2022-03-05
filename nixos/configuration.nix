@@ -49,16 +49,15 @@
     swaylock
     swayidle
     wl-clipboard
-    clipman
     mako # notification daemon
    # alacritty # Alacritty is the default terminal in the config
     wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
-    pcmanfm
     autotiling    
     swaybg
     waybar
     wlogout    
-     
+   
+    
   ];
 };
 
@@ -102,10 +101,11 @@
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
+   services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.windowManager.openbox.enable = true;
   # services.gnome.games.enable = true;
    services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
+ # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -148,8 +148,8 @@
      qemu
      virt-manager
      qbittorrent
-     micro
-          
+     pcmanfm
+     mpv   
                    
   ];
 
