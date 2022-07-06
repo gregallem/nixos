@@ -50,13 +50,13 @@
     swayidle
     wl-clipboard
     mako # notification daemon
-   # alacritty # Alacritty is the default terminal in the config
+    kitty # Alacritty is the default terminal in the config
     wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
     autotiling    
     swaybg
     waybar
     wlogout    
-   
+       
     
   ];
 };
@@ -116,16 +116,26 @@
    services.printing.drivers = [ pkgs.brlaser ];
 
   # Enable sound.
-   sound.enable = true;
-   hardware.pulseaudio.enable = true;
-
+   sound.enable = false;
+   hardware.pulseaudio.enable = false;
+  # rkit is optional but recomended
+  security.rtkit.enable = true;
+  services.pipewire = {     
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    #If you want to use JACK applications, uncomment this line
+    #jack.enable = true
+    };
+  
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.greg = {
    isNormalUser = true;
-   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+   extraGroups = [ "network manager" "wheel" ]; # Enable ‘sudo’ for the user.
    };
 
   # List packages installed in system profile. To search, run:
@@ -137,7 +147,7 @@
      neofetch
      htop
      onedrive
-     nmap-graphical
+    # nmap-graphical
      git
      zoom-us
      lxqt.lxqt-policykit # For samba to work    
@@ -149,8 +159,9 @@
      virt-manager
      qbittorrent
      pcmanfm
-     mpv   
-                   
+     mpv
+     micro
+            
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -178,8 +189,8 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  # system.stateVersion = "unstable"; # Did you read the comment?
-
+   system.stateVersion = "unstable" # Did you read the comment?
+;
  
 
 }
