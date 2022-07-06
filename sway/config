@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term gnome-terminal  
+set $term kitty  
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -63,6 +63,9 @@ set $term gnome-terminal
 #
 # Basics:
 #
+    # Start Browser
+    bindsym $mod+o exec firefox
+    
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -219,6 +222,6 @@ exec autotiling
    }    
 }
 
-default_border none
+ default_border none
 
-include /etc/sway/config.d/*
+ include /etc/sway/config.d/*
