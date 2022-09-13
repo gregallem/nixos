@@ -17,7 +17,7 @@
   '';
 
   # Optimisation Nix store
-    nix.autoOptimiseStore = true;
+   nix.settings.auto-optimise-store = true;
 
   #fish shell
   programs.fish.enable = true;
@@ -50,13 +50,13 @@
     swayidle
     wl-clipboard
     mako # notification daemon
-    kitty # Alacritty is the default terminal in the config
+   # kitty # Alacritty is the default terminal in the config
     wofi # Dmenu is the default in the config but i recommend wofi since its wayland native
     autotiling    
     swaybg
     waybar
     wlogout    
-       
+      
     
   ];
 };
@@ -105,7 +105,7 @@
   # services.xserver.windowManager.openbox.enable = true;
   # services.gnome.games.enable = true;
    services.xserver.displayManager.sddm.enable = true;
- # services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -147,7 +147,7 @@
      neofetch
      htop
      onedrive
-    # nmap-graphical
+     nmap
      git
      zoom-us
      lxqt.lxqt-policykit # For samba to work    
@@ -160,7 +160,7 @@
      qbittorrent
      pcmanfm
      mpv
-     micro
+     helix
             
   ];
 
